@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/4e96fab545.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://cdn.socket.io/4.5.3/socket.io.min.js"
+      integrity="sha384-WPFUvHkB1aHA5TDSZi6xtDgkF0wXJcIIxXhC6h8OT8EH3fC5PWro5pWJ1THjcfEi"
+      crossorigin="anonymous"
+    ></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="overlay active">
+      <form id="login-form" class="overlay-form active">
+        <h1>Login</h1>
+        <input
+          type="text"
+          placeholder="Enter user ID"
+          id="userid-input"
+          name="userid"
+        />
+        <input
+          type="password"
+          placeholder="Enter password"
+          id="password-input"
+          name="password"
+        />
+        <input type="submit" value="Sign In" />
+        <div id="error-msg"></div>
+        <button id="create-btn">Create new account</button>
+      </form>
+      <form id="create-form" class="overlay-form">
+        <h1>Create Account</h1>
+        <h3>Fill out the information. Fields marked with * must be filled.</h3>
+        <input
+          type="text"
+          placeholder="User ID*"
+          id="create-userid-input"
+          name="userid"
+        />
+        <input
+          type="password"
+          placeholder="Password*"
+          id="create-password-input"
+          name="password"
+        />
+        <input
+          type="text"
+          placeholder="First name"
+          id="create-firstName-input"
+          name="firstName"
+        />
+        <input
+          type="text"
+          placeholder="Last name"
+          id="create-lastName-input"
+          name="lastName"
+        />
+        <input
+          type="email"
+          placeholder="Email*"
+          id="create-email-input"
+          name="email"
+        />
+        <input
+          type="image"
+          placeholder="Profile Image"
+          id="create-profileImg-input"
+          name="profileImg"
+        />
+        <input type="submit" value="Create Account" />
+      </form>
+    </div>
+    <div class="chat-app-container">
+      <div class="server-tab tab">
+        <!-- <img
+          data-server="Test"
+          class="server-img server-tab-link tab-link active"
+          src="https://media.gettyimages.com/photos/two-sleepy-puppies-picture-id513284467?s=2048x2048"
+        />
+        <img
+          data-server="POE"
+          class="server-img server-tab-link tab-link"
+          src="https://logos-world.net/wp-content/uploads/2021/10/Path-of-Exile-Logo-700x394.png"
+        />
+        <img
+          data-server="Skyrim"
+          class="server-img server-tab-link tab-link"
+          src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/46b63d3c-ae67-464c-9a37-670829b2a157/d9udjon-52e7c917-ef21-43a3-a752-fb81663c07dc.png/v1/fill/w_512,h_512,strp/the_elder_scrolls_v_skyrim___icon_by_blagoicons_d9udjon-fullview.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9NTEyIiwicGF0aCI6IlwvZlwvNDZiNjNkM2MtYWU2Ny00NjRjLTlhMzctNjcwODI5YjJhMTU3XC9kOXVkam9uLTUyZTdjOTE3LWVmMjEtNDNhMy1hNzUyLWZiODE2NjNjMDdkYy5wbmciLCJ3aWR0aCI6Ijw9NTEyIn1dXSwiYXVkIjpbInVybjpzZXJ2aWNlOmltYWdlLm9wZXJhdGlvbnMiXX0.aF7Hs5F_h0gQ3KSPdOxw6XnmNVW9tGOPRggx6sseMvY"
+        />
+        <img
+          data-server="Modding"
+          class="server-img server-tab-link tab-link"
+          src="https://www.freeiconspng.com/thumbs/skyrim-icon/skyrim-icon-long-tail-0.png"
+        />
+        <img
+          data-server="Java Help Community"
+          class="server-img server-tab-link tab-link"
+          src="https://cdn-icons-png.flaticon.com/512/226/226777.png"
+        />
+        <img
+          data-server="Javascript"
+          class="server-img server-tab-link tab-link"
+          src="https://www.freepnglogos.com/uploads/javascript-png/javascript-logo-transparent-logo-javascript-images-3.png"
+        />
+        <img
+          data-server="Python Community"
+          class="server-img server-tab-link tab-link"
+          src="https://cdn3.iconfinder.com/data/icons/logos-and-brands-adobe/512/267_Python-512.png"
+        /> -->
+      </div>
+      <div class="channel-tab-container">
+        <!-- <div class="channel-tab tab active" data-server="Test">
+          <div
+            class="channel-tab-link tab-link active"
+            data-server="Test"
+            data-channel="Channel 1"
+          >
+            Channel 1
+          </div>
+          <div class="channel-tab-link tab-link" data-server="Test">
+            Channel 2
+          </div>
+          <div class="channel-tab-link tab-link" data-server="Test">
+            Channel 3
+          </div>
+        </div> -->
+      </div>
+
+      <div class="chat-tab tab">
+        <div class="chat-container">
+          <!-- <div
+            class="server-friends channel-friends chat-message-container active"
+            data-server="Test"
+            data-channel="Channel 1"
+          >
+            <div class="msg">
+              <img src="" alt="" class="msg-profile-img" />
+              <h2 class="msg-sender">lcm5506</h2>
+              <h4 class="msg-timestamp">11:30pm</h4>
+              <p class="msg-content">
+                Hi, im new here. Test msg is very very long. script script
+                script. plzplzplz. HELOOOOOOOOOOOOOOOOOOHi, im new here. Test
+                msg is very very long. script script script. plzplzplz.
+                HELOOOOOOOOOOOOOOOOOOHi, im new here. Test msg is very very
+                long. script script script. plzplzplz. HELOOOOOOOOOOOOOOOOOO
+              </p>
+            </div>
+          </div>
+          <div
+            class="server-friends channel-friends chat-message-container"
+            data-server="Test"
+            data-channel="Channel 2"
+          ></div>
+          <div
+            class="chat-message-container"
+            data-server="Test"
+            data-channel="Channel 2"
+          ></div> -->
+        </div>
+        <form type="submit" id="message-form">
+          <input type="text" id="message-input" />
+          <button id="send-btn">Send</button>
+        </form>
+      </div>
+      <div class="connected-users-tab-container">
+        </div>
+      </div>
+    </div>
+
+    <script defer src="script.js" type="module"></script>
+  </body>
+</html>

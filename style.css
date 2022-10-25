@@ -1,0 +1,337 @@
+*, *::before, *::after {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --color-black: rgb(24, 24, 24);
+    --color-gray-0: rgb(45, 45, 45);
+    --color-gray-1: rgb(53, 53, 53);
+    --color-gray-2: rgb(73, 73, 73);
+    --color-gray-3: rgb(85, 85, 85);
+    --color-gray-4: rgb(100, 100, 100);
+    --color-msg-1: rgb(190, 190, 190);
+    --color-msg-2: rgb(225, 225, 225);
+}
+
+#error-msg {
+    color: red;
+    font-size: 1rem;
+}
+
+.chat-app-container {
+    background: rgb(24, 24, 24);
+    color: white;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-size: 1rem;
+    text-decoration: none;
+    /* display: grid;
+    grid-auto-flow: column; */
+    height: 80vh;
+    width: 100vw;
+    gap: 2%;
+    display:flex;
+    flex-direction: row;
+    padding: 1rem;
+    overflow:auto;
+}
+.server-tab {
+    width: fit-content;
+    height: 100%;
+    
+}
+.channel-tab-container {
+    width: 13%;
+    height: 100%;
+    border-radius: 15px;
+    background-color: var(--color-gray-1);
+}
+.channel-tab{
+    background: none;
+}
+.tab {
+    /* display: grid;
+    grid-auto-flow: row; */
+    gap: 10px;
+    justify-content: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: var(--color-gray-1);
+    transition: all 0.4s ease-in-out;
+    min-width: fit-content;
+}
+
+.tab-link {
+    cursor: pointer;
+    height: auto;
+    display: block;
+    /* width: fit-content; */
+    /* display: inline-block; */
+    font-size: 2rem;
+    align-content: center;
+    justify-content: center;
+    border-radius: 15px;
+    padding: 10px;
+    /* margin: 5px; */
+}
+
+.tab-link:hover {
+    background-color: var(--color-gray-2);
+}
+
+.tab-link.active {
+    background-color: var(--color-gray-2);
+}
+.server-tab-link.active {
+    background-color: var(--color-gray-2);
+    border: 3px solid white;
+}
+.channel-img {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    /* background-color: rgb(255, 255, 255); */
+    transition: all 0.4s ease-in;
+    /* border: 10px solid white; */
+}
+
+.server-img:hover {
+    border-radius:  20%;
+}
+.server-img {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    /* background-color: rgb(255, 255, 255); */
+    transition: all 0.4s ease-in;
+    /* border: 10px solid white; */
+}
+.channel-img {
+}
+/* 
+.server-tab-link > img {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+} */
+
+.chat-tab {
+    width: 60%;
+    height: 100%;
+    display: block;
+    gap: 30px;
+    
+    justify-content: center;
+    align-items: center;
+}
+.chat-container {
+    width: 100%;
+    height: 90%;
+    background: var(--color-grey-1);
+    
+}
+.chat-message-container {
+    width: 100%;
+    height: 100%;
+    border: 1px solid black;
+    font-size:2rem;
+    border-radius: 15px;
+    overflow-y: scroll;
+    
+}
+
+
+.chat-message-container.active{
+    display: block;
+}
+.chat-message-container:not(.active) {
+    display: none;
+}
+
+.connected-users-tab-container {
+    width: 10%;
+    height: 100%;
+    background-color: var(--color-gray-1);
+    border-radius: 15px;
+    min-width: fit-content;
+}
+.connected-users-tab{
+    width: 100%;
+    height: auto;
+    background: none;
+}
+
+.connected-users-tab.active{
+    display: block;
+}
+.connected-users-tab:not(.active){
+    display: none;
+}
+#message-form {
+    /* height: 8%; */
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#message-input {
+    height: 100%;
+    width: 80%;
+    font-size: 2rem;
+    border-radius:15px;
+    background-color: var(--color-gray-2);
+}
+
+#send-btn{
+    font-size: 2rem;
+    width: 10%;
+    height: 90%;
+    border-radius:15px;
+}
+
+/* Tooltip Styling */
+[data-serverName] {
+    position: relative;
+    z-index: 2;
+}
+
+[data-serverName]::before, [data-serverName]::after {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
+}
+
+[data-serverName]::before{
+    position: relative;
+    content: attr(data-tooltip);
+    border: 1px solid white;
+    border-radius: 3px;
+    background-color: #000;
+    background-color: hsla(0, 0%, 20%, 0.9);
+    color: white;
+    font-size: 2rem;
+    padding: 5px;
+    left:120%;
+}
+
+[data-serverName]:hover::before,
+[data-serverName]:hover::after{
+    visibility: visible;
+    opacity: 1;
+}
+
+.overlay-form.active{
+    display: grid;
+}
+.overlay-form:not(.active){
+    display: none;
+}
+.overlay-form {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: var(--color-gray-1);
+    padding: 3rem;
+    border-radius: 15px;
+    grid-auto-flow: row;
+    gap: 20px;
+    height: fit-content;
+}
+
+.overlay-form h1{
+    color: white;
+    font-size: 3rem;
+    justify-self: center;
+}
+
+.overlay-form h3{
+    color: white;
+    font-size: 1rem;
+    justify-self: center;
+}
+
+.overlay-form input {
+    font-size:2rem;
+    height: 4rem;
+}
+
+.overlay-form button {
+    font-size:2rem;
+    height: 4rem;
+}
+
+
+.overlay{
+        position: fixed; /* Sit on top of the page content */
+        display: block; /* Hidden by default */
+        width: 100%; /* Full width (cover the whole page) */
+        height: 100%; /* Full height (cover the whole page) */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.8); /* Black background with opacity */
+        z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+        cursor: default; /* Add a pointer on hover */
+        content: ' ';
+}
+
+.overlay.active{
+    display:block;
+}
+.overlay:not(.active) {
+    display:none;
+}
+
+.channel-tab.active {
+    display: block;
+}
+.channel-tab:not(.active) {
+    display: none;
+}
+
+
+.chat-message-container > .msg{
+    width: 100%;
+    height: auto;
+    padding: 1rem 1rem 1rem 5rem;
+    position: relative;
+}
+
+.msg:hover {
+    background-color: var(--color-gray-0);
+}
+
+.msg-profile-img {
+    position: absolute;
+    border-radius: 50%;
+    background-color: hotpink;
+    width: 4rem;
+    height: 4rem;
+    left: 0;
+}
+
+.msg-sender {
+    font-size: 2rem;
+    color: var(--color-msg-2);
+    display: inline-block
+    
+}
+
+.msg-timestamp {
+    font-size: 1rem;
+    color: var(--color-msg-1);
+    display: inline-block
+}
+
+.msg-content {
+    font-size: 1.5rem;
+    color: var(--color-msg-2);
+    display: block;
+    margin-top: 1rem;
+    word-wrap: break-word;
+    white-space: normal;
+}

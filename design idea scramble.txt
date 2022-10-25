@@ -1,0 +1,53 @@
+
+
+connection
+
+user connects to server
+	user = { 
+		
+		userid: username that is unique to this user
+		password: *****
+		profileName: in chat display name
+		profilePicture: url()
+		firstName: real first name
+		lastName: real last name
+		email: ...@...com
+		gender: M/F
+		Channels: [ list of joined channels ]
+		settings: { settings that are needed on server side }
+	}
+	
+	
+This gets stored on the server
+	users[socket.id] = user
+	
+	let map = new Map()
+	map.set(user.userid, user)
+	
+	when user try to log in, user provides userid & pswd then search map for the user data
+	then match the password => return valid or invalid
+
+	if userid doesn't exist in map, we know that the provided userid is invalid
+
+
+On the server keep a Object of channels and each channels have list of joined users. We send out msg to all joined users.
+Its observer pattern
+
+
+leave room for extending to include db to store chatlogs and such.
+maybe use simple array for now to store chatlogs
+
+When users join new channel, we add user to channel subscriber list and add chanel to user's channel list
+
+When chat msg comes in, determine channel and socket.to(channel).emit('chat-msg', msg);
+Store msg as log
+
+for p2p msg, we set channel to userid and use userid as channel.
+	maybe let all users join channel of their userid when they join server
+
+for msg, allow pictures and media (audio and video) to be sent as well
+	Then add functionality to display them in chat window on client side
+	Store them also in log DB
+
+
+	
