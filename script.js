@@ -90,6 +90,7 @@ skillbarFills.forEach(element => intersectionObserver.observe(element));
 const projectCards = document.querySelectorAll('.project-container > .card');
 const projectModal = document.querySelector('#project-modal')
 const projectModalHeader = document.querySelector('.modal-header');
+const projectModalImgContainer = document.querySelector('.modal-img-container');
 const projectModalImg = document.querySelector('.modal-img');
 const projectModalContent = document.querySelector('.modal-text-content');
 const projectModalLinkContainer = document.querySelector('.modal-link-container');
@@ -101,7 +102,16 @@ projectCards.forEach(card => card.addEventListener('click', ()=>{
         if (child.className.includes('card-body')) projectModalContent.innerHTML = child.innerHTML;
         let abridged = document.querySelector('.modal-text-content>.abridged-text');
         if (abridged) abridged.classList.add('reveal-abridged');
-        if (child.className.includes('card-footer')) projectModalLinkContainer.innerHTML = child.innerHTML;
+        if (child.className.includes('card-footer')) {
+            projectModalLinkContainer.innerHTML = child.innerHTML;
+            // find project-link if exists and add the link href to modal img container
+            for (let link of child.children){
+                if (link.className.includes('project-link')) projectModalImgContainer.href = link.getAttribute("href");
+            }
+        }
+        
+        
+
     }
     projectModal.showModal();
 }));

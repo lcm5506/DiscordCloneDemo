@@ -616,13 +616,14 @@ body{
 .modal-header {
     text-shadow: 7px 7px 1px var(--color-tertiary-shadow);
     text-align: center;
+    margin-bottom: 4rem;
 }
 .modal-body{
-    margin-top: 1rem;
+    margin: 2rem 0;
 }
 .modal-text-content,
 .modal-link-container {
-    margin: 1rem 3rem;
+    margin: 2rem 3rem 0 3rem;
 }
 
 .modal-text-content.abridged-text {
