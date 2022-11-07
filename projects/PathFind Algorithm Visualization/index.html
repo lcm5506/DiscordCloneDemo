@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>PathFind Algorithm Visualization</title>
+  </head>
+  <body>
+    <div class="control-container">
+      <div class="algorithm-dropdown-container">
+        <label for="algorithm-dropdown">Algorithm: </label>
+        <select name="algorithm-dropdown" id="algorithm-dropdown">
+          <option value="dfs">Depth First Search</option>
+          <option value="bfs">Breadth First Search</option>
+          <option value="dijkstra">Djikstra</option>
+          <option value="aStar">A*</option>
+        </select>
+      </div>
+
+      <div class="animation-speed-container">
+        <label for="animation-speed-slider">Animation Speed: </label>
+        <label for="animation-speed-slider" id="animation-speed-slider-output"
+          >5 ms</label
+        >
+        <input
+          type="range"
+          min="5"
+          max="2000"
+          value="5"
+          class="slider"
+          id="animation-speed-slider"
+        />
+      </div>
+      <button id="start-btn">Find Path</button>
+      <button id="reset-btn">Reset</button>
+      <button id="help-btn">Help</button>
+    </div>
+    <div class="comment-container">
+      <p id="comment">
+        Click and Drag on white tiles to draw Obstacles, represented by black
+        tiles. <br />You can also move
+        <span style="color: red">start point</span> and
+        <span style="color: rgb(0, 175, 0)">end point</span> by click and
+        dragging.
+      </p>
+    </div>
+    <canvas id="canvas1"></canvas>
+
+    <script type="module" src="script.js"></script>
+  </body>
+</html>

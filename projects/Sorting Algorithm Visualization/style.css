@@ -1,0 +1,115 @@
+:root {
+    --color-primary: rgb(0, 3, 151);
+    /* --color-primary: rgba(0, 2, 138, 0.808); */
+    /* --color-primary: rgba(0, 4, 255, 0.37); */
+    --color-secondary: rgb(23, 238, 253);
+    --color-tertinary: rgb(216, 126, 141);
+    --color-quarternary: rgb(172, 138, 212);
+    --color-font: rgb(255, 255, 255);
+
+    --color-background: rgb(0, 1, 80);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: var(--color-background);
+    color: var(--color-font);
+}
+
+.control-container {
+    position: fixed;
+    width: 100%;
+    background-color: var(--color-primary);
+    padding: 1rem 3rem;
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+    box-shadow: 0 2px 15px black;
+}
+
+#canvas1 {
+    position: absolute;
+    top: 10rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 60%;
+    min-height: 600px;
+    min-width: 1000px;
+    /* border: 3px solid var(--color-secondary); */
+    background: transparent;
+}
+
+.control-container {
+    align-items: center;
+    justify-content: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+}
+
+.control-container > * {
+    margin: 0 1rem;
+}
+
+.control-container > button {
+    font-size: inherit;
+    font-family: inherit;
+    color: var(--color-primary);
+    padding: 0.3rem 0.7rem;
+    border-radius: 5px;
+    /* border: 1px solid var(--color-quarternary); */
+    background-color: var(--color-secondary);
+    box-shadow: 1px 1px 5px navy;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.control-container button:hover {
+    opacity: 1;
+}
+.control-container *:disabled, *[disabled]{
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+.slider {
+    opacity: 0.7;
+    height: 20px;
+    transition: opacity .2s;
+    accent-color: var(--color-font);
+}
+
+.slider:hover {
+    opacity: 1;
+}
+
+
+.slider::-webkit-slider-thumb {
+    appearance: none;
+    -webkit-appearance: none;
+    background: var(--color-background);
+    cursor:pointer;
+    width: 30px;
+    height: 30px;
+}
+
+.slider::-moz-range-thumb {
+    background: var(--color-secondary);
+    cursor:pointer;
+}
+
+.control-container select {
+    font-family: inherit;
+    font-size: inherit;
+    margin: 0;
+    padding: 0 1rem 0.1rem 0.3rem;
+    border: none;
+    border-radius: 5px;
+    background-color:rgb(240, 240, 240)
+}

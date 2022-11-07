@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Sorting Algorithm Visualizer</title>
+  </head>
+  <body>
+    <div class="control-container">
+      <div class="algorithm-selection-container">
+        <label for="algorithm-selection">Algorithm: </label>
+        <select name="algorithms" id="algorithm-selection">
+          <option value="insertion">Insertion Sort</option>
+          <option value="merge">Merge Sort</option>
+          <option value="bubble">Bubble Sort</option>
+          <option value="selection">Selection Sort</option>
+          <option value="heap">Heap Sort</option>
+          <option value="quick">Quick Sort</option>
+        </select>
+      </div>
+      <div class="sample-size-container">
+        <label for="sample-size">Sample-Size: </label>
+        <label for="sample-size" id="sample-size-output">50</label>
+        <input
+          type="range"
+          name="sample-size"
+          id="sample-size-slider"
+          min="10"
+          max="500"
+          value="50"
+          class="slider"
+        />
+      </div>
+      <div class="animation-speed-container">
+        <label for="animation-speed">Animation Speed: </label>
+        <label for="animation-speed" id="animation-speed-output">200 ms</label>
+        <input
+          type="range"
+          name="animation-speed"
+          id="animation-speed-slider"
+          class="slider"
+          min="5"
+          max="1000"
+          value="200"
+        />
+      </div>
+      <button id="start-btn">Start Sorting</button>
+      <button id="shuffle-btn">Shuffle</button>
+      <button id="reset-btn">Reset</button>
+    </div>
+    <canvas id="canvas1"></canvas>
+
+    <script src="script.js"></script>
+  </body>
+</html>

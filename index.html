@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="./images/favicon.png" type="image/x-icon" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://kit.fontawesome.com/4e96fab545.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Secular+One&display=swap"
+      rel="stylesheet"
+    />
+    <title>Charles Lee's Web-Porfolio</title>
+  </head>
+  <body>
+    <dialog class="modal bg-primary" id="project-modal">
+      <div class="modal-close-btn bg-primary">
+        <i class="fa-solid fa-xmark"></i>
+      </div>
+      <h2 class="modal-header header-2">Header goes here.</h2>
+      <div class="modal-body">
+        <a href="#" class="modal-img-container">
+          <img
+            src="./images/man-working-with-computer-by-Lovepik.png"
+            alt="Screenshot of the project"
+            class="modal-img"
+          />
+        </a>
+        <div class="modal-text-content text-content">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat
+          dolorem eveniet ad nulla modi doloremque, voluptates excepturi nisi
+          repudiandae asperiores quos illo magni enim velit! Nobis ab ad non
+          blanditiis repellat iure debitis at nihil neque dignissimos quae quam
+          repellendus voluptatibus enim, maiores tenetur labore commodi
+          voluptatem esse exercitationem ducimus? Culpa, veniam sint
+          reprehenderit ratione rerum atque vero quia et. Vitae impedit ex
+          consectetur provident dolor facere dolorum? Optio ullam voluptatem
+          porro autem veritatis qui error pariatur culpa sit explicabo?
+        </div>
+        <div class="modal-link-container">
+          <!-- <a
+            href=""
+            class="modal-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fa-solid fa-arrow-up-right-from-square"></i>Open
+            Project</a
+          >
+          <a
+            href=""
+            class="modal-link"
+            target="_blank"
+            rel="noopener noreferrer"
+            ><i class="fa-brands fa-github"></i>Source Code</a
+          > -->
+        </div>
+      </div>
+    </dialog>
+    <audio src="./sounds/typing.mp3" id="typing-sound" loop></audio>
+
+    <div class="nav vertical-nav-bar">
+      <div class="nav-btn active-btn" data-section="home">
+        <i class="fa-solid fa-house fa-xl"></i>
+      </div>
+      <div class="nav-btn" data-section="about">
+        <i class="fa-solid fa-address-card fa-xl"></i>
+      </div>
+      <div class="nav-btn" data-section="project">
+        <i class="fa-solid fa-code fa-xl"></i>
+      </div>
+      <div class="nav-btn" data-section="contact">
+        <i class="fa-regular fa-envelope fa-xl"></i>
+      </div>
+    </div>
+    <div class="section section-home active" id="home" data-section="home">
+      <div class="background-shape-1"></div>
+      <div class="background-shape-2"></div>
+      <div class="grid-1-2-columns">
+        <div
+          class="grid-left-column grid-split-column circular-layout home-left"
+        >
+          <img
+            src="./images/man-working-with-computer-by-Lovepik.png"
+            alt="Man in front of a computer"
+            class="image-xl circular-layout-center-element"
+          />
+          <div
+            class="deg0 inner-circle circular-layout-element circle-lg bg-color-white animation-delay-0 bubble-expand-animation"
+            data-deg="0"
+          >
+            <img src="./images/java.png" alt="java icon" />
+          </div>
+          <div
+            class="deg15 inner-circle circular-layout-element circle-sm bg-color-orange animation-delay-1 bubble-expand-animation"
+            data-deg="15"
+          ></div>
+          <div
+            class="deg30 inner-circle circular-layout-element circle-sm bg-color-skyblue animation-delay-2 bubble-expand-animation"
+            data-deg="30"
+          ></div>
+          <div
+            class="deg45 inner-circle circular-layout-element circle-lg bg-color-yellow animation-delay-3 bubble-expand-animation"
+            data-deg="45"
+            style="overflow: hidden"
+          >
+            <img src="./images/js (1).png" alt="javascript icon" />
+          </div>
+          <div
+            class="deg60 inner-circle circular-layout-element circle-sm bg-color-pink animation-delay-4 bubble-expand-animation"
+            data-deg="60"
+          ></div>
+          <div
+            class="deg75 inner-circle circular-layout-element circle-sm bg-color-yellow animation-delay-5 bubble-expand-animation"
+            data-deg="75"
+          ></div>
+          <div
+            class="deg90 inner-circle circular-layout-element circle-lg bg-color-skyblue animation-delay-6 bubble-expand-animation"
+            data-deg="90"
+          >
+            <img src="./images/css.png" alt="css icon" />
+          </div>
+          <div
+            class="deg105 inner-circle circular-layout-element circle-sm bg-color-turquoise animation-delay-7 bubble-expand-animation"
+            data-deg="105"
+          ></div>
+          <div
+            class="deg120 inner-circle circular-layout-element circle-sm bg-color-orange animation-delay-8 bubble-expand-animation"
+            data-deg="120"
+          ></div>
+          <div
+            class="deg135 inner-circle circular-layout-element circle-lg bg-color-orange animation-delay-9 bubble-expand-animation"
+            data-deg="135"
+          >
+            <img src="./images/html.png" alt="html icon" />
+          </div>
+          <div
+            class="deg150 inner-circle circular-layout-element circle-sm bg-color-pink animation-delay-10 bubble-expand-animation"
+            data-deg="150"
+          ></div>
+          <div
+            class="deg165 inner-circle circular-layout-element circle-sm bg-color-skyblue animation-delay-11 bubble-expand-animation"
+            data-deg="165"
+          ></div>
+          <div
+            class="deg180 inner-circle circular-layout-element circle-lg bg-color-teal animation-delay-12 bubble-expand-animation"
+            data-deg="180"
+          >
+            <img src="./images/react.png" alt="react icon" />
+          </div>
+        </div>
+        <div class="grid-right-column grid-split-column">
+          <div class="grid-right-column-content">
+            <h2 class="header-2">
+              Hi! My name is
+              <span class="secondary-color text-color-emphasis"
+                >Charles Lee</span
+              >, web-developer in Edmonton, Canada.
+            </h2>
+            <br />
+            <h3 class="typing-animation header-3"></h3>
+            <br />
+            <a href="./files/Resume.doc" class="sliding-btn-container" download>
+              <span class="sliding-btn-text">Download CVS</span>
+              <i class="fa-solid fa-download sliding-btn-icon"></i>
+              <div class="hover-fill-bar"></div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-about horz-margin-7" data-section="about">
+      <div class="section-title">
+        <h1 class="section-title-header header-1">
+          About <span class="text-color-emphasis">Me</span>
+        </h1>
+      </div>
+      <div class="section-body body-container">
+        <div class="grid-2-columns">
+          <div class="grid-left-column grid-split-column">
+            <div class="grid-text-content text-content">
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nam ad
+                maiores voluptas sed, tempore, ex velit, numquam beatae sint
+                neque omnis nesciunt! Placeat repellendus ullam iste magni ea ad
+                beatae similique, quas libero, illo ratione autem. Blanditiis
+                optio magnam maiores, vel laudantium reiciendis distinctio a
+                tempora molestiae at, ex modi.
+              </p>
+            </div>
+          </div>
+          <div class="grid-right-column grid-split-column">
+            <div class="card-container">
+              <div class="card card-sm">
+                <h4 class="card-header header-4">+15 Projects</h4>
+                <br />
+                <p class="card-body text-content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Placeat, quam?
+                </p>
+              </div>
+              <div class="card card-sm">
+                <h3 class="card-header header-4">Management Experience</h3>
+                <br />
+                <p class="card-body text-content">
+                  Have 10 years of exprience running a small restaurant.
+                </p>
+              </div>
+              <div class="card card-sm">
+                <h3 class="card-header header-4">+15 Projects</h3>
+                <br />
+                <p class="card-body text-content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Placeat, quam?
+                </p>
+              </div>
+              <div class="card card-sm">
+                <h3 class="card-header header-4">+15 Projects</h3>
+                <br />
+                <p class="card-body text-content">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Placeat, quam?
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="subsection-header header-2">Skills</div>
+      <div class="skills-container subsection-content">
+        <div class="skill">
+          <h4 class="skill-header header-4">HTML</h4>
+
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-HTML"></div>
+          </div>
+          <h6 class="skill-percentage text-content">70%</h6>
+        </div>
+        <div class="skill">
+          <h4 class="skill-header header-4">Java</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-Java"></div>
+          </div>
+          <h6 class="skill-percentage text-content">80%</h6>
+        </div>
+        <div class="skill">
+          <h4 class="skill-header header-4">CSS</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-CSS"></div>
+          </div>
+          <h6 class="skill-percentage text-content">60%</h6>
+        </div>
+
+        <div class="skill">
+          <h4 class="skill-header header-4">SQL</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-SQL"></div>
+          </div>
+          <h6 class="skill-percentage text-content">60%</h6>
+        </div>
+        <div class="skill">
+          <h4 class="skill-header header-4">Javascript</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-Javascript"></div>
+          </div>
+          <h6 class="skill-percentage">90%</h6>
+        </div>
+        <div class="skill">
+          <h4 class="skill-header header-4">React</h4>
+          <div class="skill-bar">
+            <div class="skill-bar-fill" id="fill-React"></div>
+          </div>
+          <h6 class="skill-percentage text-content">50%</h6>
+        </div>
+      </div>
+      <div class="subsection subsection-container">
+        <div class="subsection-header header-2">
+          Java Skills and Tools in my Arsenal
+        </div>
+        <div class="subsection-content">
+          <div id="5B0FE09AAD96A68E2FB51B28F02749AAAC2_18646">
+            <div id="5B0FE09AAD96A68E2FB51B28F02749AAAC2_18646_robot">
+              <a
+                href="https://cloud.smartdraw.com/share.aspx/?pubDocShare=5B0FE09AAD96A68E2FB51B28F02749AAAC2"
+                target="_blank"
+                ><img
+                  src="https://cloud.smartdraw.com/cloudstorage/5B0FE09AAD96A68E2FB51B28F02749AAAC2/preview2.png"
+              /></a>
+            </div>
+          </div>
+          <script
+            src="https://cloud.smartdraw.com/plugins/html/js/sdjswidget_html.js"
+            type="text/javascript"
+          ></script>
+          <script type="text/javascript">
+            SDJS_Widget("5B0FE09AAD96A68E2FB51B28F02749AAAC2", 18646, 1, "");
+          </script>
+          <br />
+        </div>
+        <div class="subsection-header header-2">
+          Web-Development Skills and Tools
+        </div>
+        <div class="subsection-content">
+          <div id="8FA2A3241F24E6C41C7F4B0937328481FDF_94752">
+            <div id="8FA2A3241F24E6C41C7F4B0937328481FDF_94752_robot">
+              <a
+                href="https://cloud.smartdraw.com/share.aspx/?pubDocShare=8FA2A3241F24E6C41C7F4B0937328481FDF"
+                target="_blank"
+                ><img
+                  src="https://cloud.smartdraw.com/cloudstorage/8FA2A3241F24E6C41C7F4B0937328481FDF/preview2.png"
+              /></a>
+            </div>
+          </div>
+          <script
+            src="https://cloud.smartdraw.com/plugins/html/js/sdjswidget_html.js"
+            type="text/javascript"
+          ></script>
+          <script type="text/javascript">
+            SDJS_Widget("8FA2A3241F24E6C41C7F4B0937328481FDF", 94752, 1, "");
+          </script>
+          <br />
+        </div>
+      </div>
+    </div>
+    <div class="section section-project horz-margin-7" data-section="project">
+      <div class="section-title">
+        <h1 class="section-title-header header-1">Projects</h1>
+      </div>
+      <div class="section-body body-container">
+        <div class="subsection">
+          <div class="subsection-header header-2">HTML, CSS and Javascript</div>
+          <div class="project-container card-container subsection-content">
+            <div class="card card-auto">
+              <!-- <div class="card-img-container"> -->
+              <img
+                src="./images/Sort_Algorithm_Visualizer.png"
+                alt=""
+                class="card-img"
+              />
+              <!-- </div> -->
+              <div class="card-header header-4">Sort Algorithm Visualizer</div>
+              <div class="card-body text-content">
+                Classic sorting algorithm visualizer. Designed to help you
+                understand sorting algorithms easier.
+                <span class="abridged-text"
+                  >It let you select sorting algorithm, sample size, and
+                  animation speed. <br />Sorting algorithms implemented are as
+                  follows:<br />
+                  <ul>
+                    <li>Insertion Sort</li>
+                    <li>Selection Sort</li>
+                    <li>Merge Sort</li>
+                    <li>Bubble Sort</li>
+                    <li>Heap Sort</li>
+                    <li>Bubble Sort</li>
+                  </ul>
+                </span>
+              </div>
+              <div class="card-footer text-content">
+                <a
+                  href="./projects/Sorting Algorithm Visualization/index.html"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i>Open
+                  Project</a
+                >
+                <a
+                  href="https://github.com/lcm5506/DiscordCloneDemo"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-github"></i>Source Code</a
+                >
+              </div>
+            </div>
+            <div class="card card-auto">
+              <!-- <div class="card-img-container"> -->
+              <img
+                src="./images/Web_Pathfind_2.png"
+                alt="Screenshot of pathfinding algorithm visualizer project"
+                class="card-img"
+              />
+              <!-- </div> -->
+              <div class="card-header header-4">
+                Pathfind Algorithm Visualizer
+              </div>
+              <div class="card-body text-content">
+                This project is designed to visualize pathfinding algorithms.
+                User can design a maze and it will find a path from point A to
+                point B.
+                <span class="abridged-text"
+                  >Users can select sorting algorithm and animation speed. Also
+                  users can create their own unique mazes by simply clicking and
+                  dragging. Black tiles drawn represent obstacles and
+                  pathfinding algorithms will go around created obstacles to
+                  find optimal path.<br />Pathfinding algorithms implemented are
+                  as follows:<br />
+                  <ul>
+                    <li>Depth First Search</li>
+                    <li>Breadth First Search</li>
+                    <li>Djikstra's Algorithm</li>
+                    <li>A*</li>
+                  </ul>
+                </span>
+              </div>
+              <div class="card-footer text-content">
+                <a
+                  href="./projects/PathFind Algorithm Visualization/index.html"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i>Open
+                  Project</a
+                >
+                <a
+                  href="https://github.com/lcm5506/DiscordCloneDemo"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-github"></i>Source Code</a
+                >
+              </div>
+            </div>
+            <div class="card card-auto">
+              <!-- <div class="card-img-container"> -->
+              <img
+                src="./images/Discord_Clone_Demo.png"
+                alt="Screenshot of discord clone demo project"
+                class="card-img"
+              />
+              <!-- </div> -->
+              <div class="card-header header-4">Discord Clone Demo</div>
+              <div class="card-body text-content">
+                This project utilizes websocket protocol using socket.io to
+                provide chat app with multiple server and channel functionality.
+                <span class="abridged-text"
+                  >On connection, users are given random userid. Messages to
+                  different channels are displayed on its corresponding channel
+                  tab. Design is based on Discord Application.<br />*Server
+                  needs to be running in order for this project to function.<br />
+                </span>
+              </div>
+              <div class="card-footer text-content">
+                <a
+                  href="./projects/DiscordCloneDemo/index.html"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-solid fa-arrow-up-right-from-square"></i>Open
+                  Project</a
+                >
+                <a
+                  href="https://github.com/lcm5506/DiscordCloneDemo"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-github"></i>Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="subsection">
+          <div class="subsection-header header-2">Java</div>
+          <div class="project-container card-container subsection-content">
+            <div class="card card-auto">
+              <img
+                src="./images/Java_Maze_Generator.png"
+                alt=""
+                class="card-img"
+              />
+              <div class="card-header header-4">Maze Generator/Solver</div>
+              <div class="card-body text-content">
+                This application generates a maze and solves it using different
+                algorithms. The application also animates the process for
+                visualization.
+                <span class="abridged-text"
+                  >Maze generation algorithms implemented are as follows:<br />
+                  <ul>
+                    <li>Randomized Depth First Search</li>
+                    <li>Randomized Kruskal's Algorithm</li>
+                  </ul>
+                  <br />
+                  Maze solving algorithms implemented are as follows:<br />
+                  <ul>
+                    <li>Depth First Search</li>
+                    <li>Breadth First Search</li>
+                    <li>Djikstra's Algorithm</li>
+                    <li>A*</li>
+                  </ul>
+                </span>
+              </div>
+              <div class="card-footer text-content">
+                <a
+                  href="https://github.com/lcm5506/DiscordCloneDemo"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-github"></i>Source Code</a
+                >
+              </div>
+            </div>
+            <div class="card card-auto">
+              <img src="./images/Java_POSDemo.png" alt="" class="card-img" />
+              <div class="card-header header-4">POS Demo</div>
+              <div class="card-body text-content">
+                This application is a demo of a Point Of Sale System.
+                <span class="abridged-text"
+                  >Functionalities include:<br />
+                  <ul>
+                    <li>Adding, removing tables and modifying their layout.</li>
+                    <li>Adding, removing, editing employee information.</li>
+                    <li>Adding, removing, editing sales items in the menu.</li>
+                    <li>
+                      Adding or removing of ordered menu items to a specific
+                      table.
+                    </li>
+                    <li>
+                      All the information relevent are stored in MySQL database.
+                    </li>
+                  </ul>
+                </span>
+              </div>
+              <div class="card-footer text-content">
+                <a
+                  href="https://github.com/lcm5506/DiscordCloneDemo"
+                  class="modal-link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  ><i class="fa-brands fa-github"></i>Source Code</a
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="section section-contact" data-section="contact">
+      <div class="section-title">
+        <h1 class="section-title-header header-1">Contact</h1>
+      </div>
+      <div class="section-body body-container">
+        <div class="typing-animation header-3"></div>
+        You can directly email me or send message in Indeed.
+      </div>
+    </div>
+    <script defer src="script.js"></script>
+  </body>
+</html>
